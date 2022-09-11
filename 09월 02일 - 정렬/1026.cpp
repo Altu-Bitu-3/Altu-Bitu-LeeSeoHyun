@@ -3,23 +3,23 @@
 using namespace std;
 int main()
 {
-	int n, min = 0;
-	cin >> n;
-	int* arr_a = new int[n];
-	int* arr_b = new int[n];
-	for (int i = 0; i < n; i++) {
-		cin >> arr_a[i];
+	int N, MIN = 0;
+	cin >> N;
+	int* arr_A = new int[N];
+	int* arr_B = new int[N];
+	for (int i = 0; i < N; i++) {
+		cin >> arr_A[i];
 	}
-	for (int i = 0; i < n; i++) {
-		cin >> arr_b[i];
+	for (int i = 0; i < N; i++) {
+		cin >> arr_B[i];
 	}
-	sort(arr_a, arr_a + n);
-	sort(arr_b, arr_b + n);
-	for (int i = 0; i < n; i++) {
-		min += arr_a[i] * arr_b[n - 1 - i];
+	sort(arr_A, arr_A + N);
+	sort(arr_B, arr_B + N);
+	for (int i = 0; i < N; i++) {
+		MIN += arr_A[i] * arr_B[N - 1 - i];
 	}
-	cout << min;
-	delete[] arr_a;
-	delete[] arr_b;
+	cout << MIN;
+	delete[] arr_A;
+	delete[] arr_B;
 	return 0;
 }
