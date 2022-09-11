@@ -3,20 +3,20 @@
 using namespace std;
 int main()
 {
-	int N;
-	long long int MAX = 0;
-	cin >> N;
-	int* arr = new int[N];
-	for (int i = 0; i < N; i++) {
+	int n;
+	long long int max = 0;
+	cin >> n;
+	int* arr = new int[n];
+	for (int i = 0; i < n; i++) {
 		cin >> arr[i];
 	}
-	sort(arr, arr + N);
-	for (int i = 0; i < N; i++) {
-		arr[i] = arr[i] - (N - 1 - i);
+	sort(arr, arr + n);
+	for (int i = 0; i < n; i++) {
+		arr[i] = arr[i] - (n - 1 - i);
 		if (arr[i] > 0)
-			MAX += arr[i];
+			max += arr[i];
 	}
-	cout << MAX;
+	cout << max;
 	delete[] arr;
 	return 0;
 }
