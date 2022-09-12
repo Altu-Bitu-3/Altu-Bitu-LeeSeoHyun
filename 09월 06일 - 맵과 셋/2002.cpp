@@ -1,16 +1,16 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <map>
 #include <vector>
 using namespace std;
 
-//Ãß¿ùÀ» ÇÑ Â÷°¡ ¸î°³ÀÎÁö ±¸ÇÏ´Â ÇÔ¼ö
+//ì¶”ì›”ì„ í•œ ì°¨ê°€ ëª‡ê°œì¸ì§€ êµ¬í•˜ëŠ” í•¨ìˆ˜
 int jumpCar(int n, vector<string>& out_car, map<string, int>& m) {
-	int ans = 0; //¸î°³ÀÇ Â÷°¡ Ãß¿ù?
-	for (int i = 0; i < n; i++) { //³ª¿Â Â÷ ¼ø¼­´ë·Î °Ë»çÇÑ´Ù
-		for (int j = i + 1; j < n; j++) { //³» µÚÀÇ Â÷µéÀÇ ÀÎµ¦½º°¡ ³ªº¸´Ù ÀÛ¾Ò´Ù¸é
-			if (m[out_car[i]] > m[out_car[j]]) { //(¸ÕÀú µé¾î¿Â Â÷¿´´Ù¸é Ãß¿ù)
+	int ans = 0; //ëª‡ê°œì˜ ì°¨ê°€ ì¶”ì›”?
+	for (int i = 0; i < n; i++) { //ë‚˜ì˜¨ ì°¨ ìˆœì„œëŒ€ë¡œ ê²€ì‚¬í•œë‹¤
+		for (int j = i + 1; j < n; j++) { //ë‚´ ë’¤ì˜ ì°¨ë“¤ì˜ ì¸ë±ìŠ¤ê°€ ë‚˜ë³´ë‹¤ ì‘ì•˜ë‹¤ë©´
+			if (m[out_car[i]] > m[out_car[j]]) { //(ë¨¼ì € ë“¤ì–´ì˜¨ ì°¨ì˜€ë‹¤ë©´ ì¶”ì›”)
 				ans++;
-				break; //Ãß¿ùÀ» ÇÑ Â÷ °¹¼ö¸¸ ¾Ë¸é µÊ
+				break; //ì¶”ì›”ì„ í•œ ì°¨ ê°¯ìˆ˜ë§Œ ì•Œë©´ ë¨
 			}
 		}
 	}
@@ -20,7 +20,7 @@ int jumpCar(int n, vector<string>& out_car, map<string, int>& m) {
 int main() {
 	int n;
 	string car;
-	map<string, int> m; //value´Â Ã³À½¿¡ µé¾î¿Â ¼ø¼­
+	map<string, int> m; //valueëŠ” ì²˜ìŒì— ë“¤ì–´ì˜¨ ìˆœì„œ
 	cin >> n;
 	vector<string> out_car(n, " ");
 	for (int i = 1; i <= n; i++) {
@@ -28,7 +28,7 @@ int main() {
 		m[car] = i;
 	}
 	for (int i = 0; i < n; i++) {
-		cin >> out_car[i]; //[i]°¡ °ğ ³ª¿Â ¼ø¼­ÀÌ¹Ç·Î ÀÌ¸§¸¸ ÇÊ¿äÇÔ
+		cin >> out_car[i]; //[i]ê°€ ê³§ ë‚˜ì˜¨ ìˆœì„œì´ë¯€ë¡œ ì´ë¦„ë§Œ í•„ìš”í•¨
 	}
 	cout << jumpCar(n, out_car, m);
 	return 0;

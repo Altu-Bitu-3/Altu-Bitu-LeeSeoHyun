@@ -1,4 +1,4 @@
-//º¤ÅÍ·Î Ç¬ ÄÚµå
+ï»¿//ë²¡í„°ë¡œ í‘¼ ì½”ë“œ
 /*
 #include<iostream>
 #include<vector>
@@ -33,7 +33,7 @@ int main() {
 	}
 }*/
 
-//¼ÂÀ¸·Î Ç¬ ÄÚµå (ÈÎ¾À °£´Ü)
+//ì…‹ìœ¼ë¡œ í‘¼ ì½”ë“œ (í›¨ì”¬ ê°„ë‹¨)
 #include<iostream>
 #include<set>
 using namespace std;
@@ -47,7 +47,7 @@ int main() {
 		s.insert(input);
 	}
 	//set<int>::iterator iter;
-	//auto Å°¿öµå´Â ÃÊ±âÈ­ °ª¿¡ µû¶ó µ¥ÀÌÅÍ Å¸ÀÔÀ» ÀÚµ¿À¸·Î Á¤ÇØÁÜ
+	//auto í‚¤ì›Œë“œëŠ” ì´ˆê¸°í™” ê°’ì— ë”°ë¼ ë°ì´í„° íƒ€ì…ì„ ìë™ìœ¼ë¡œ ì •í•´ì¤Œ
 	/*
 	for(auto iter = s.begin(); iter!= s.end(); iter++)
 	cout << *iter << ' ';

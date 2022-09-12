@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <map>
@@ -15,7 +15,7 @@ int main() {
 		char c;
 		cin >> num;
 		v.push_back(num);
-		cin.get(c); //°ø¹é ¶Ç´Â '\n' ÀÔ·Â¹Ş±â
+		cin.get(c); //ê³µë°± ë˜ëŠ” '\n' ì…ë ¥ë°›ê¸°
 		if (c == '\n')
 			break;
 	}
@@ -25,7 +25,7 @@ int main() {
 	map<pair<int, int>, bool> visited;
 	for (int i = 0; i < v.size(); i++) {
 		for (int j = i + 1; j < v.size(); j++) {
-			if (v[i] + v[j] == sum && !visited.count({ v[i], v[j] })) { //mapÀÇ .count() ÇÔ¼ö¸¦ ÅëÇØ Å°°ªÀÌ ÀÖ´ÂÁö È®ÀÎ
+			if (v[i] + v[j] == sum && !visited.count({ v[i], v[j] })) { //mapì˜ .count() í•¨ìˆ˜ë¥¼ í†µí•´ í‚¤ê°’ì´ ìˆëŠ”ì§€ í™•ì¸
 				cout << v[i] << " " << v[j] << '\n';
 				visited[{v[i], v[j]}] = true;
 				cnt++;

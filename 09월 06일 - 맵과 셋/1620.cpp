@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <map>
 #include <string>
 
@@ -9,8 +9,8 @@ int main() {
 	cin.tie(0);
 	int n, m;
 	string input;
-	map<string, int> pocket_name; //ÀÌ¸§ÀÌ key, ¹øÈ£°¡ value
-	map<int, string> pocket_num;  //¹øÈ£°¡ key, ÀÌ¸§ÀÌ value
+	map<string, int> pocket_name; //ì´ë¦„ì´ key, ë²ˆí˜¸ê°€ value
+	map<int, string> pocket_num;  //ë²ˆí˜¸ê°€ key, ì´ë¦„ì´ value
 
 	cin >> n >> m;
 	for (int i = 1; i <= n; i++) {
@@ -20,7 +20,7 @@ int main() {
 	}
 	while (m--) {
 		cin >> input;
-		if (isdigit(input[0])) { //¼ıÀÚ ÀÔ·ÂÀÌ¶ó¸é
+		if (isdigit(input[0])) { //ìˆ«ì ì…ë ¥ì´ë¼ë©´
 			int number = stoi(input);
 			cout << pocket_num[number] << '\n';
 		}
