@@ -75,8 +75,8 @@ int main() //main 함수
     v = josephusProb(n, k); //벡터형 변수에 벡터형 함수 josephusProb(n, k)를 통해 얻은 값 넣기
     // 출력
     cout << "<"; //꺽쇠 기호 출력
-    for (int i = 0; i < n - 1; i++) { //for문 n번 반복해서 v[i]값 출력
-        cout << v[i] << ", ";
+    for (int i = 0; i < n - 1; i++) { //for문 n번 반복해서
+        cout << v[i] << ", "; //v[i]값 출력
     }
     cout << v[n - 1] << ">"; //꺽쇠 기호 출력
 }
