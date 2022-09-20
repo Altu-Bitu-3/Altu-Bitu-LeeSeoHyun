@@ -12,12 +12,14 @@ int main() {
 	while (n--) {
 		cin >> cmd;
 		if (cmd == "all") {
-			for (int i = 0; i < 20; i++)
+			for (int i = 0; i < 20; i++) {
 				arr[i] = 1;
+			}
 		}
 		else if (cmd == "empty") {
-			for (int i = 0; i < 20; i++)
+			for (int i = 0; i < 20; i++) {
 				arr[i] = 0;
+			}
 		}
 		else
 			cin >> x;
@@ -28,16 +30,10 @@ int main() {
 			arr[x - 1] = 0;
 		}
 		if (cmd == "check") {
-			if (arr[x - 1] == 1)
-				cout << 1 << "\n";
-			else
-				cout << 0 << "\n";
+			cout << arr[x - 1] << "\n";
 		}
 		if (cmd == "toggle") {
-			if (arr[x - 1] == 1)
-				arr[x - 1] = 0;
-			else
-				arr[x - 1] = 1;
+			arr[x - 1] = 1 - arr[x - 1];
 		}
 	}
 	return 0;
