@@ -1,0 +1,21 @@
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main() {
+	int n;
+	queue<int> q;
+	cin >> n;
+	for (int i = 1; i <= n; i++) {
+		q.push(i);
+	}
+	while (q.size() != 1) {
+		//주의! 해당 문제는 최소 한개의 카드가 있으나 다른 문제에서 pop 연산시 꼭 empty 체크를 해 줘야 한다
+		q.pop(); // 가장 위 카드 버리기
+		q.push(q.front()); // 위에 있는 카드 맨 아래로
+		q.pop(); //옮겼으므로 카드 제거
+	}
+	cout << q.front() << '\n';
+	return 0;
+}
