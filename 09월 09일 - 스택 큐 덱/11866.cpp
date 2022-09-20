@@ -1,4 +1,4 @@
-//³»°¡ ¸ÕÀú Ç®¾ú´ø ÄÚµå
+ï»¿//ë‚´ê°€ ë¨¼ì € í’€ì—ˆë˜ ì½”ë“œ
 /*
 #include <iostream>
 #include <deque>
@@ -32,51 +32,51 @@ int main() {
 	cout << '>';
 }*/
 
-//Ãß°¡Á¦Ãâ À§ÇØ »ùÇÃ ÄÚµå¿¡ ÁÖ¼® ´Ü °Í
-#include <iostream> //c++ ÀÔÃâ·Â Çì´õ
-#include <vector> //vector Çì´õ
-#include <queue> //queue Çì´õ
+//ì¶”ê°€ì œì¶œ ìœ„í•´ ìƒ˜í”Œ ì½”ë“œì— ì£¼ì„ ë‹¨ ê²ƒ
+#include <iostream> //c++ ìž…ì¶œë ¥ í—¤ë”
+#include <vector> //vector í—¤ë”
+#include <queue> //queue í—¤ë”
 
-using namespace std; //std ¶óÀÌºê·¯¸® »ç¿ë
+using namespace std; //std ë¼ì´ë¸ŒëŸ¬ë¦¬ ì‚¬ìš©
 /*
- * Å¥ÀÇ Ã³À½°ú ³¡À» ¿¬°áÇÏ¿© ¿øÀ» ±¸Çö
- * Å¥¿¡ ¾Æ¹«°Íµµ ³²¾ÆÀÖÁö ¾ÊÀ» ¶§±îÁö N ¹øÂ° ¿ø¼Ò¸¦ Å¥¿¡¼­ Á¦°Å
+ * íì˜ ì²˜ìŒê³¼ ëì„ ì—°ê²°í•˜ì—¬ ì›ì„ êµ¬í˜„
+ * íì— ì•„ë¬´ê²ƒë„ ë‚¨ì•„ìžˆì§€ ì•Šì„ ë•Œê¹Œì§€ N ë²ˆì§¸ ì›ì†Œë¥¼ íì—ì„œ ì œê±°
 */
 
-vector<int> josephusProb(int n, int k) //Á¤´äÀ¸·Î º¤ÅÍ¸¦ ¸®ÅÏÇÏ±â À§ÇØ, º¤ÅÍÇüÀ¸·Î ÇÔ¼ö ¼±¾ð. n, k°ª º¹»ç.
+vector<int> josephusProb(int n, int k) //ì •ë‹µìœ¼ë¡œ ë²¡í„°ë¥¼ ë¦¬í„´í•˜ê¸° ìœ„í•´, ë²¡í„°í˜•ìœ¼ë¡œ í•¨ìˆ˜ ì„ ì–¸. n, kê°’ ë³µì‚¬.
 {
-    queue<int> q; //Å¥ ¼±¾ð
-    vector<int> result; //°á°ú¸¦ ÀúÀåÇÒ º¤ÅÍ ¼±¾ð
-    for (int i = 1; i <= n; i++) { //Å¥¿¡ 1ºÎÅÍ n±îÁöÀÇ ¿ø¼Ò¸¦ ³Ö´Â´Ù
+    queue<int> q; //í ì„ ì–¸
+    vector<int> result; //ê²°ê³¼ë¥¼ ì €ìž¥í•  ë²¡í„° ì„ ì–¸
+    for (int i = 1; i <= n; i++) { //íì— 1ë¶€í„° nê¹Œì§€ì˜ ì›ì†Œë¥¼ ë„£ëŠ”ë‹¤
         q.push(i);
     }
-    int cnt = 0; //Ä«¿îÆ® º¯¼ö ¼±¾ðÇÏ¿© 0À¸·Î ÃÊ±âÈ­
-    while (!q.empty()) { //while¹® ¹Ýº¹, Å¥°¡ ºñ°Ô µÇ¸é Å»Ãâ
-        int x = q.front(); //Å¥ÀÇ Ã¹¹øÂ° ¿ø¼Ò¸¦ Á¦°ÅÇÒ °Çµ¥, °æ¿ì¿¡ µû¶ó ³ªÁß¿¡ ´Ù½Ã »ðÀÔÇÏ±â À§ÇØ º¯¼ö x¿¡ ÀúÀå
-        q.pop(); //Å¥ÀÇ Ã¹¹øÂ° ¿ø¼Ò¸¦ Á¦°Å. q.front()°¡ Á¦°ÅµÊ
-        cnt++; //q.pop() È½¼ö Ä«¿îÆ®
-        if (cnt == k) { //k¹øÂ° popÇÏ´Â ¿ø¼Ò¶ó¸é
-            result.push_back(x); //result º¤ÅÍ¿¡ x¸¦ »ðÀÔ
-            cnt = 0; //cnt¸¦ 0À¸·Î ÃÊ±âÈ­, q.pop() È½¼ö Ä«¿îÆ® ´Ù½Ã ½ÃÀÛ (´ÙÀ½ ¹Ýº¹ ¶§°¡ 1)
-            continue; //q.push(x) ÇÏÁö ¾ÊÀ½À¸·Î½á Å¥ÀÇ ¿ø¼Ò °¹¼ö °¨¼Ò
+    int cnt = 0; //ì¹´ìš´íŠ¸ ë³€ìˆ˜ ì„ ì–¸í•˜ì—¬ 0ìœ¼ë¡œ ì´ˆê¸°í™”
+    while (!q.empty()) { //whileë¬¸ ë°˜ë³µ, íê°€ ë¹„ê²Œ ë˜ë©´ íƒˆì¶œ
+        int x = q.front(); //íì˜ ì²«ë²ˆì§¸ ì›ì†Œë¥¼ ì œê±°í•  ê±´ë°, ê²½ìš°ì— ë”°ë¼ ë‚˜ì¤‘ì— ë‹¤ì‹œ ì‚½ìž…í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ xì— ì €ìž¥
+        q.pop(); //íì˜ ì²«ë²ˆì§¸ ì›ì†Œë¥¼ ì œê±°. q.front()ê°€ ì œê±°ë¨
+        cnt++; //q.pop() íšŸìˆ˜ ì¹´ìš´íŠ¸
+        if (cnt == k) { //kë²ˆì§¸ popí•˜ëŠ” ì›ì†Œë¼ë©´
+            result.push_back(x); //result ë²¡í„°ì— xë¥¼ ì‚½ìž…
+            cnt = 0; //cntë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”, q.pop() íšŸìˆ˜ ì¹´ìš´íŠ¸ ë‹¤ì‹œ ì‹œìž‘ (ë‹¤ìŒ ë°˜ë³µ ë•Œê°€ 1)
+            continue; //q.push(x) í•˜ì§€ ì•ŠìŒìœ¼ë¡œì¨ íì˜ ì›ì†Œ ê°¯ìˆ˜ ê°ì†Œ
         }
-        q.push(x); //k¹øÂ° pop ÇÏ´Â ¿ø¼Ò°¡ ¾Æ´Ò °æ¿ì¸¸ ½ÇÇàµÊ, popÇÑ ¿ø¼Ò ´Ù½Ã µÚ¿¡ push
+        q.push(x); //kë²ˆì§¸ pop í•˜ëŠ” ì›ì†Œê°€ ì•„ë‹ ê²½ìš°ë§Œ ì‹¤í–‰ë¨, popí•œ ì›ì†Œ ë‹¤ì‹œ ë’¤ì— push
     }
-    return result; //Á¤´äÀÌ µé¾îÀÖ´Â result º¤ÅÍ ¸®ÅÏ
+    return result; //ì •ë‹µì´ ë“¤ì–´ìžˆëŠ” result ë²¡í„° ë¦¬í„´
 }
 
-int main() //main ÇÔ¼ö
+int main() //main í•¨ìˆ˜
 {
-    int n, k; //»ç¶÷ ¼ö NÀ» ÀÔ·Â¹Þ±â À§ÇÑ º¯¼ö n, K¹ø¤Š¸¦ À§ÇÑ º¯¼ö k ¼±¾ð
-    vector<int> v; //Á¤´äÀ» ÀÔ·Â¹Þ°í Ãâ·ÂÇÒ º¤ÅÍÇü º¯¼ö v ¼±¾ð
-    // ÀÔ·Â
-    cin >> n >> k; //n, k¿¡ ÀÔ·Â¹Þ±â
-    // ¿¬»ê
-    v = josephusProb(n, k); //º¤ÅÍÇü º¯¼ö¿¡ º¤ÅÍÇü ÇÔ¼ö josephusProb(n, k)¸¦ ÅëÇØ ¾òÀº °ª ³Ö±â
-    // Ãâ·Â
-    cout << "<"; //²©¼è ±âÈ£ Ãâ·Â
-    for (int i = 0; i < n - 1; i++) { //for¹® n¹ø ¹Ýº¹ÇØ¼­
-        cout << v[i] << ", "; //v[i]°ª Ãâ·Â
+    int n, k; //ì‚¬ëžŒ ìˆ˜ Nì„ ìž…ë ¥ë°›ê¸° ìœ„í•œ ë³€ìˆ˜ n, Kë²ˆì¨°ë¥¼ ìœ„í•œ ë³€ìˆ˜ k ì„ ì–¸
+    vector<int> v; //ì •ë‹µì„ ìž…ë ¥ë°›ê³  ì¶œë ¥í•  ë²¡í„°í˜• ë³€ìˆ˜ v ì„ ì–¸
+    // ìž…ë ¥
+    cin >> n >> k; //n, kì— ìž…ë ¥ë°›ê¸°
+    // ì—°ì‚°
+    v = josephusProb(n, k); //ë²¡í„°í˜• ë³€ìˆ˜ì— ë²¡í„°í˜• í•¨ìˆ˜ josephusProb(n, k)ë¥¼ í†µí•´ ì–»ì€ ê°’ ë„£ê¸°
+    // ì¶œë ¥
+    cout << "<"; //êº½ì‡  ê¸°í˜¸ ì¶œë ¥
+    for (int i = 0; i < n - 1; i++) { //forë¬¸ në²ˆ ë°˜ë³µí•´ì„œ
+        cout << v[i] << ", "; //v[i]ê°’ ì¶œë ¥
     }
-    cout << v[n - 1] << ">"; //²©¼è ±âÈ£ Ãâ·Â
+    cout << v[n - 1] << ">"; //êº½ì‡  ê¸°í˜¸ ì¶œë ¥
 }
