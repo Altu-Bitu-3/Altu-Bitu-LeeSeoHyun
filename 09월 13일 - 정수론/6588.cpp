@@ -1,13 +1,15 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace  std;
+const int SIZE = 1000000;
 
 int main() {
-    bool arr[1000001] = { 1, 1, }; //0, 1ÀÏ¶§´Â ÆĞ½º
-
-    for (int i = 2; i * i < 1000000; i++)
+    bool arr[SIZE + 1] = { 1, 1, }; //0, 1ì¼ë•ŒëŠ” íŒ¨ìŠ¤
+    for (int i = 2; i * i < SIZE; i++)
     {
-        if (arr[i]) continue; //true(1)ÀÏ¶§ continueµÈ´Ù
-        for (int j = i * i; j < 1000000; j += i)
+        if (arr[i]) {
+            continue; //true(1)ì¼ë•Œ continueëœë‹¤
+        }
+        for (int j = i * i; j < SIZE; j += i)
         {
             arr[j] = true;
         }
@@ -20,19 +22,18 @@ int main() {
     while (1)
     {
         cin >> n;
-        if (!n)
+        if (!n) {
             break;
+        }
 
-        left = 3; //Â¦¼ö¿¡ ´ëÇØ¼­ °ËÁõÇÏ¹Ç·Î È¦¼ö+È¦¼öÀÇ ÇÕÀ¸·Î ³ªÅ¸³ª°Ô µÊ
+        left = 3; //ì§ìˆ˜ì— ëŒ€í•´ì„œ ê²€ì¦í•˜ë¯€ë¡œ í™€ìˆ˜+í™€ìˆ˜ì˜ í•©ìœ¼ë¡œ ë‚˜íƒ€ë‚˜ê²Œ ë¨
         right = n - 3;
 
-        bool check = false;
         while (left <= right)
         {
-            if (!arr[left] && !arr[right]) { //µÑ ´Ù ¼Ò¼öÀÏ¶§
+            if (!arr[left] && !arr[right]) { //ë‘˜ ë‹¤ ì†Œìˆ˜ì¼ë•Œ
                 if ((left + right) == n) {
                     cout << n << " = " << left << " + " << right << '\n';
-                    check = true;
                     break;
                 }
             }
@@ -40,7 +41,8 @@ int main() {
             right -= 2;
         }
 
-        if (!check)
+        if (left > right) {
             cout << "Goldbach's conjecture is wrong.";
+        }
     }
 }
