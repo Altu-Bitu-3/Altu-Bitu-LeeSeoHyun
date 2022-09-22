@@ -3,6 +3,7 @@
 using namespace std;
 
 int getEndNumber(int n) {
+	// n번째 종말의 수를 찾는 함수
 	int num = 666 - 1;
 	while (n > 0) {
 		string s = to_string(++num);
