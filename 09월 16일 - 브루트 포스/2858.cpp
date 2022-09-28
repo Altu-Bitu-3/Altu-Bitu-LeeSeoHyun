@@ -1,17 +1,22 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	int r, b, l, w;
-	cin >> r >> b;
-	int siz = r + b;
+pair<int, int> func(int r, int siz) {
+	int l, w;
 	for (w = 3; w < siz / 2; w++) {
 		if (siz % w == 0) {
 			l = siz / w;
 			if (r == (l + w - 2) * 2) {
+				return { l, w };
 				break;
 			}
 		}
 	}
-	cout << l << " " << w;
+}
+int main() {
+	int r, b;
+	pair<int, int> p;
+	cin >> r >> b;
+	p = func(r, r + b);
+	cout << p.first << " " << p.second;
 }

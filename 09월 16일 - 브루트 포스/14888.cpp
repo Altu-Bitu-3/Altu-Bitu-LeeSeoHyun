@@ -5,36 +5,35 @@ int n;
 int num[11] = {};
 int oper[4];
 
-int m = 1000000001;
-int M = -1000000001;
+int calmin = 10e9 + 1;
+int calmax = -10e9 - 1;
 
-void func(int result, int count) {
+int calOperator(int result, int num, int i) {
+	if (i == 0) {
+		return result + num;
+	}
+	else if (i == 1) {
+		return result - num;
+	}
+	else if (i == 2) {
+		return result * num;
+	}
+	else {
+		return result / num;
+	}
+}
+
+void calCompare(int result, int count) {
 	if (count == n - 1) {
-		if (m > result) {
-			m = result;
-		}
-		if (M < result) {
-			M = result;
-		}
+		calmin = min(calmin, result);
+		calmax = max(calmax, result);
 		return;
 	}
 
 	for (int i = 0; i < 4; i++) {
 		if (oper[i] == 0) continue;
 		oper[i]--;
-		if (i == 0) {
-			func(result + num[count + 1], count + 1);
-		}
-		else if (i == 1) {
-			func(result - num[count + 1], count + 1);
-		}
-		else if (i == 2) {
-			func(result * num[count + 1], count + 1);
-		}
-		else {
-			func(result / num[count + 1], count + 1);
-		}
-
+		calCompare(calOperator(result, num[count + 1], i), count + 1);
 		oper[i]++;
 	}
 }
@@ -48,6 +47,6 @@ int main() {
 	for (int i = 0; i < 4; i++) {
 		cin >> oper[i];
 	}
-	func(num[0], 0);
-	cout << M << '\n' << m << '\n';
+	calCompare(num[0], 0);
+	cout << calmax << '\n' << calmin << '\n';
 }
