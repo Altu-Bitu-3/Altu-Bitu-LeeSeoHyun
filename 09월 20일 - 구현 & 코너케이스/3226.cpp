@@ -5,16 +5,13 @@ using namespace std;
 int charge(int h, int m, int d) {
 	int amin = 60 - m;
 	int bmin = d - amin;
-	if (h == 6) {
-		if (m + d >= 60) {
-			return 5 * amin + 10 * bmin;
-		}
+	if (h == 6 && m + d >= 60) {
+		return 5 * amin + 10 * bmin;
 	}
-	else if (h == 18) {
-		if (m + d >= 60) {
-			return 10 * amin + 5 * bmin;
-		}
+	else if (h == 18 && m + d >= 60) {
+		return 10 * amin + 5 * bmin;
 	}
+
 	if (h >= 7 && h < 19) {
 		return d * 10;
 	}
