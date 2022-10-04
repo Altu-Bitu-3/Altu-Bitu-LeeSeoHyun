@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<algorithm>
 #include<vector>
 using namespace std;
@@ -21,5 +21,5 @@ int main() {
 	cout << arr[n][m];
 	return 0;
 }
-//1 ¡Â N, M ¡Â 1,000ÀÌ¹Ç·Î arr[1001][1001]À» ¸¸µé¸é µÈ´Ù
-//Âü°íÇÑ ºí·Î±×: https://ip99202.github.io/posts/%EB%B0%B1%EC%A4%80-11048-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-c++/
+//1 â‰¤ N, M â‰¤ 1,000ì´ë¯€ë¡œ arr[1001][1001]ì„ ë§Œë“¤ë©´ ëœë‹¤
+//ì°¸ê³ í•œ ë¸”ë¡œê·¸: https://ip99202.github.io/posts/%EB%B0%B1%EC%A4%80-11048-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-c++/
