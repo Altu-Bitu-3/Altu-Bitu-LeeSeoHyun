@@ -9,7 +9,7 @@ typedef pair<int, int> pii;
 const int INF = 1e5 * 8 * 3;
 
 
-vector<int> dijkstra(int start, int n, vector<vector<pii>>& graph) {
+vector<int> dijkstra(int start, int n, vector<vector<pii>>& graph) { //다익스트라 함수
 	vector<int> dist(n + 1, INF);
 	dist[start] = 0;
 	//pq 선언
@@ -18,11 +18,11 @@ vector<int> dijkstra(int start, int n, vector<vector<pii>>& graph) {
 
 	//dijstra
 	while (!pq.empty()) {
-		int d = pq.top().first;
-		int v = pq.top().second;
+		int d = pq.top().first;  //현재 정점까지의 경로 길이
+		int v = pq.top().second; //현재 탐색하려는 정점
 		pq.pop();
 
-		if (d > dist[v]) {
+		if (d > dist[v]) { //d가 dist[v]보다 클 경우 최소가 아님
 			continue;
 		}
 
@@ -65,17 +65,17 @@ int solve(int v1, int v2, int n, vector<vector<pii>>& graph) {
 
 int main() {
 	int  e, v1, v2, n;
-
-	cin >> n >> e;
+	
+	cin >> n >> e; //정점의 개수 n, 간선의 개수 e 입력받음
 	vector<vector<pii>> graph(n + 1, vector<pii>(0));
-	while (e--) {
+	while (e--) { //e개의 간선에 대하여 정보 파악
 		int a, b, c;
-		cin >> a >> b >> c;
+		cin >> a >> b >> c; //a번 정점과 b번 정점 사이 존재하는 양방향 길의 거리가 c.
 		//입력받은 값 저장. 양방향 그래프이므로 a와 b 모두 저장 해주어야함
 		graph[a].push_back(pii(b, c));
 		graph[b].push_back(pii(a, c));
 	}
 
-	cin >> v1 >> v2;
-	cout << solve(v1, v2, n, graph);
+	cin >> v1 >> v2; //반드시 거쳐야 하는 두 개의 서로 다른 정점 번호 입력받기
+	cout << solve(v1, v2, n, graph); //함수 실행하여 최단 경로 길이 출력
 }
