@@ -2,7 +2,7 @@
 #include <vector>
 #include <tuple>
 #include <algorithm>
-#include<cmath>
+#include <cmath>
 
 using namespace std;
 
@@ -36,8 +36,8 @@ bool unionNodes(int x, int y) {
     return true;
 }
 
-float kruskal(int v, vector<tp>& dist) {
-    float sum = 0;
+double kruskal(int v, vector<tp>& dist) {
+    double sum = 0;
     int n1, n2;
     double d;
     for (int i = 0; i < dist.size(); i++)
@@ -58,8 +58,9 @@ int main() {
 
     vector<tp> dist;
     parent.assign(n + 1, -1);
+    god.push_back({ 0, 0 });
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
         cin >> x >> y;
         god.push_back({ x, y });
     }
@@ -68,13 +69,14 @@ int main() {
         unionNodes(x, y);
     }
 
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 1; i <= n - 1; i++)
     {
-        for (int j = i + 1; j < n; j++)
+        for (int j = i + 1; j <= n; j++)
         {
-            double dx = pow(god[i].first - god[i].second, 2);
-            double dy = pow(god[j].first - god[j].second, 2);
-            dist.push_back({ sqrt(dx + dy), i, j });
+            double dx = pow(god[i].first - god[j].first, 2);
+            double dy = pow(god[i].second - god[j].second, 2);
+            long double r = sqrt(dx + dy);
+            dist.push_back({ r, i, j });
         }
     }
 
